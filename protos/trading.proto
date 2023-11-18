@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package trade_server;
+
+// The Trading service definition
+service TradingFunction{
+    // Function invoked to send the request
+    rpc sendRequest (ActionRequest) returns (ActionReply) {}
+}
+
+// The request message containing the request details
+message ActionRequest {
+    string request_type = 1;
+    optional string symbol = 2;
+    optional int32 quantity = 3;
+}
+
+// The response message containing the reply from the server
+message ActionReply {
+    string reply_msg = 1;
+}
